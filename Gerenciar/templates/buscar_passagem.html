@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    
+    <div class="container-fluid">
+    <div class="row">
+      
+
+        
+          
+      <div class="col-xl-12 col-sm-6 mb-3">  
+        <div class="card text-white bg-secondary o-hidden h-100 ">      
+          <div class="card-body ">
+            <form class="form-autenticar"  action="/area_interna/passagem/buscar" method="POST">
+            {% csrf_token %}
+                <select  name="passagem_selecao" value="OK" style="width: 700px; height: 50px" required >
+                    {% for al in passagem %}
+                    <option value={{al.id}}> {{al.cliente.nome}}   CPF: {{ al.cliente.cpf}}</option>        
+                    {% endfor %} 
+                </select>         
+                <button class="btn btn-xs btn-warning " type="submit" >EDITAR</button>  
+           </form>     
+          </div>
+        </div>
+      </div>    
+        
+
+
+
+
+      <div class="col-xl-12 col-sm-6 mb-3">  
+            {%block passagem%}
+
+            {%endblock%}
+             
+        
+      </div>
+      
+{% endblock %}

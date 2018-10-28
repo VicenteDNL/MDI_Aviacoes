@@ -1,0 +1,54 @@
+{% extends 'buscar_aeroporto.html' %}
+{% block aeroporto %}
+    
+
+<div class="card text-white bg-danger o-hidden h-100 ">
+          
+        <div class="card-body ">
+            <form class="form-autenticar"  action="/area_interna/aeroporto/salvar" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-4">
+              </div>
+
+              <div class="col-md-7">
+              <h2>Dados do Aeroporto</h2>
+              <br/>
+              <label>Razão Social:</label>
+              <input size="44" value={{selecao.nome}} type="text" class="text" name="razao_social" required/>
+              <br/><br/>
+              <label>CNPJ:</label>
+              <input size="01" value={{selecao.cnpj}} type="number" class="text" name="cnpj" required/>
+              <br/><br/>
+              <label>Rua:</label>
+              <input  size="53" value={{selecao.endereco.rua}} name='rua' class="text" type="text" required/>
+              <br/><br/>
+              <label>Nº:</label>
+              <input size="5" value={{selecao.endereco.numero}} name='numero' class="text" type="text" required/>
+              <label>Complemento:</label>
+              <input  size="28" value={{selecao.endereco.complemento}} name='complemento' class="text" type="text" required/>
+              <br/><br/>
+              <label>Bairro:</label>
+              <input size="25" value={{selecao.endereco.bairro}} name='bairro' class="text" type="text"  required/>
+              <label>CEP:</label>
+              <input size="15" value={{selecao.endereco.cep}} name='cep' class="text" type="text" required/>
+              <br/><br/>
+              <label>Cidade:</label>
+              <input size="35" value={{selecao.endereco.cidade}} name='cidade' class="text" type="text" required/>
+              <label>Estado:</label>
+              <input size="2" value={{selecao.endereco.estado}}  name='estado' class="text" type="text" required/>
+              <br/><br/>  
+              </div>
+            
+            </div>
+            <button class="btn btn-lg btn-warning btn-block" type="submit">SALVAR</button>
+            </form>
+            <div class="card-body-icon col-md-1">
+                <i class="fa fa-fw fa-list"></i>
+            </div>
+        </div>
+        
+    
+</div>
+      
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-sm-6 mb-3">  
+        <div class="card text-white bg-success o-hidden h-100 ">
+          
+          <div class="card-body ">
+            <form class="form-autenticar"  action="/area_interna/aeronave/salvar" method="POST">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-7">
+                <h2>Dados da Aeronave</h2>
+                <br/>
+                <label>Modelo:</label>
+                <input  type="text" class="text" name='modelos' required/>
+                <br/><br/>
+                <label>Capacidade de Carga:</label>
+                <input  type="number" class="text" name="capacidade_carga" required/>
+                <br/><br/>
+                <label>Autonomia:</label>
+                <input   name='autonomia' class="text" type="number" required></input>
+                <br/><br/>
+                <label>Capacidade de Passageiros:</label>
+                <input  name='capacidade_passageiros' class="text" type="number" required></input> 
+                <br/><br/>           
+                </div>
+              </div>
+              <button class="btn btn-lg btn-warning btn-block" type="submit" required>SALVAR</button>
+            </form>
+            <div class="card-body-icon col-md-1">
+                <i class="fa fa-fw fa-list"></i> 
+            </div>
+          
+        </div>
+        </div>
+      </div>
+      
+{% endblock %}

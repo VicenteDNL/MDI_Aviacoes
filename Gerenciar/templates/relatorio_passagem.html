@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-sm-6 mb-3">  
+        <div class="card text-white bg-dark o-hidden h-100 ">
+          
+          <div class="card-body ">
+                <h3> Lista de Cliente que compraram Passagens </h3>
+                {% for al in tudo %}   
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Relatorio{{al.id}}">
+                        <span class="nav-link-text"><h4>{{al.nomecliente}}</h4></span>
+                      </a>
+                      <ul class="sidenav-second-level collapse" id="Relatorio{{al.id}}">
+                           <li>
+                            <h6>Codigo da Passagem: {{al.id}}</h6>
+                          </li>             
+                          <li>
+                            <h6>Aeroporto de Saida: {{al.nomeaeroporto}} </h6> 
+                          </li>
+                          <li>
+                            <h6>Duração do Voo: {{al.duracaovoo}}</h6>
+                          </li>             
+                          <li>
+                            <h6>Numero da Poltrona: {{al.poltrona}}</h6>
+                          </li> 
+                          <li>
+                           <h6>Data da Partida: {{al.datap}}</h6>
+                          </li>   
+                          <li>
+                            <h6>Horario da Partida: {{al.horariop}}</h6>
+                          </li>   
+                          <li>
+                                <h6>Aeroporto de Destino: {{al.nomeDestino}}</h6>
+                          </li> 
+                        </ul>
+                      
+                {% endfor %} 
+
+            <div class="card-body-icon col-md-1">
+                <i class="fa fa-fw fa-list"></i> 
+            </div>
+          
+        </div>
+        </div>
+      </div>
+      
+{% endblock %}

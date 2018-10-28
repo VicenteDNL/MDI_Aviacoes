@@ -1,0 +1,233 @@
+
+{% load static from staticfiles%}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>MDI Aviações</title>
+  <!-- Bootstrap core CSS-->
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static "css/sb-admin.css" %}" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top"  bgproperties="fixed" >
+  <!-- Navigation-->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="/area_interna">MDI Aviações</a>
+
+  
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#OpcoesPassagens">
+            <span class="nav-link-text">Passagens</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="OpcoesPassagens">
+              <li>
+                <a href="/area_interna/passagen/cadastrar">Cadastrar</a>
+              </li>
+              <li>
+                <a href="/area_interna/passagen/alterar">Alterar</a>
+              </li>
+              <li>
+                  <a href="/area_interna/passagen/excluir">Excluir</a>
+              </li>
+              <li>
+                 <a href="/area_interna/passagen/relatorio">Relatorio</a>
+             </li>
+            </ul>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Passageiros">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#OpcoesPassageiros" data-parent="#exampleAccordion">
+            <span class="nav-link-text">Passageiros</span>
+          </a>
+
+          <ul class="sidenav-second-level collapse" id="OpcoesPassageiros">
+            <li>
+              <a href="/area_interna/cliente/cadastrar">Cadastrar</a>
+            </li>
+            <li>
+              <a href="/area_interna/cliente/alterar">Alterar</a>
+            </li>
+            <li>
+                <a href="/area_interna/cliente/excluir">Excluir</a>
+              </li>
+          </ul>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="AeroPorto">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#OpcoesAeroportos">
+            <span class="nav-link-text">Aeroportos</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="OpcoesAeroportos">
+              <li>
+                <a href="/area_interna/aeroporto/cadastrar">Cadastrar</a>
+              </li>
+              <li>
+                <a href="/area_interna/aeroporto/alterar">Alterar</a>
+              </li>
+              <li>
+                  <a href="/area_interna/aeroporto/excluir">Excluir</a>
+                </li>
+                <li>
+                    <a href="/area_interna/aeroporto/relatorio">Relatorio</a>
+                  </li>
+            </ul>
+        </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#OpcoesAeronaves">
+          <span class="nav-link-text">Aeronaves</span>
+        </a>
+        <ul class="sidenav-second-level collapse" id="OpcoesAeronaves">
+            <li>
+              <a href="/area_interna/aeronave/cadastrar">Cadastrar</a>
+            </li>
+            <li>
+              <a href="/area_interna/aeronave/alterar">Alterar</a>
+            </li>
+            <li>
+                <a href="/area_interna/aeronave/excluir">Excluir</a>
+              </li>
+              <li>
+                  <a href="/area_interna/aeronave/relatorio">Relatorio</a>
+                </li>
+          </ul>
+      </li>
+
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#OpcoesPilotos">
+        <span class="nav-link-text">Pilotos</span>
+      </a>
+      <ul class="sidenav-second-level collapse" id="OpcoesPilotos">
+          <li>
+            <a href="/area_interna/piloto/cadastrar">Cadastrar</a>
+          </li>
+          <li>
+            <a href="/area_interna/piloto/alterar">Alterar</a>
+          </li>
+          <li>
+              <a href="/area_interna/piloto/excluir">Excluir</a>
+            </li>
+            <li>
+                <a href="/area_interna/piloto/relatorio">Relatorio</a>
+              </li>
+        </ul>
+    </li>
+
+
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#OpcoesVoos">
+            <span class="nav-link-text">Voos</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="OpcoesVoos">
+              <li>
+                <a href="/area_interna/voo/cadastrar">Cadastrar</a>
+              </li>
+              <li>
+                <a href="/area_interna/voo/alterar">Alterar</a>
+              </li>
+              <li>
+                  <a href="/area_interna/voo/excluir">Excluir</a>
+              </li>
+              <li>
+                  <a href="/area_interna/voo/relatorio">Relatorio</a>
+              </li>
+            </ul>
+        </li>
+
+        
+        
+
+
+
+        
+      </ul>
+
+
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      
+      
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content-wrapper"  >
+      
+      {%block conteudo%}
+
+      {%endblock%}
+     
+      
+    </div>
+    
+  
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © MDI Aviações 2018</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Deseja sair?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" href="/area_interna/sair">Sair</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static "vendor/jquery/jquery.min.js" %}" ></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{% static "vendor/jquery-easing/jquery.easing.min.js"  %}"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{% static "vendor/chart.js/Chart.min.js"  %}"></script>
+    <script src="{% static "vendor/datatables/jquery.dataTables.js"  %}"></script>
+    <script src="{% static "vendor/datatables/dataTables.bootstrap4.js"  %}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{% static "js/sb-admin.min.js"  %}"></script>
+    <!-- Custom scripts for this page-->
+    <script src="{% static "js/sb-admin-datatables.min.js"  %}"></script>
+    <script src="{% static "js/sb-admin-charts.min.js"  %}"></script>
+  </div>
+</body>
+
+</html>

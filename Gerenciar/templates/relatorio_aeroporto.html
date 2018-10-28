@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-sm-6 mb-3">  
+        <div class="card text-white bg-dark o-hidden h-100 ">
+          
+          <div class="card-body ">
+                <h3> Lista de Aeroportos cadastradas por Nome </h3>
+                {% for al in tudo %}   
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Relatorio{{al.cnpj}}">
+                        <span class="nav-link-text"><h4>{{al.nome}}</h4></span>
+                      </a>
+                      <ul class="sidenav-second-level collapse" id="Relatorio{{al.cnpj}}">
+                          <li>
+                            <h6>CNPJ: {{al.cnpj}} </h6> 
+                          </li>
+                          <li>
+                            <h6>Endereço</h6>
+                            <ul>
+                            <h7>Rua: {{al.rua}}, Nº: {{al.numero}}</h7><br/>
+                            <h7>Complemento: {{al.complemento}}, CEP:{{al.cep}}</h7><br/>
+                            <h7>Bairro: {{al.bairro}}, Cidade: {{al.cidade}}, Estado: {{al.estado}}</h7><br/>
+                            </ul>
+                          </li>             
+                        </ul>
+                      
+                {% endfor %} 
+
+            <div class="card-body-icon col-md-1">
+                <i class="fa fa-fw fa-list"></i> 
+            </div>
+          
+        </div>
+        </div>
+      </div>
+      
+{% endblock %}

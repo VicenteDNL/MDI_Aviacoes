@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-sm-6 mb-3">  
+        <div class="card text-white bg-primary o-hidden h-100 ">
+          
+          <div class="card-body ">
+            <form class="form-autenticar"  action="/area_interna/voo/salvar" method="POST">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                <h2>Dados Voo </h2>
+                <br/>
+                <label>Local Saida:</label>
+                <select  name="saida_selecao" value="OK" style="width: 500px; height: 40px">
+                    {% for al in local %}
+                    <option value={{al.id}}>{{ al.nome}}   Codico Unico: {{al.id}}</option>        
+                    {% endfor %}
+                </select>
+                <br/><br/>
+                <label>Local Chegada:</label>
+                <select  name="chegada_selecao" value="OK" style="width: 500px; height: 40px">
+                    {% for al in local %}
+                    <option value={{al.id}}>{{ al.nome}}   Codico Unico: {{al.id}}</option>        
+                    {% endfor %}
+                </select>
+
+                <br/><br/>
+                <label>Aeronave:</label>
+                <select  name="aeronave_selecao" value="OK" style="width: 500px; height: 40px" required >
+                    {% for al in aeronave %}
+                    <option value={{al.id}}>{{ al.modelo}}   Codico Unico: {{al.id}}</option>        
+                    {% endfor %}
+                </select>
+                <br/><br/>
+                <label>Piloto:</label>
+                <select  name="piloto_selecao" value="OK" style="width: 500px; height: 40px" required >
+                    {% for al in piloto %}
+                    <option value={{al.id}}>{{ al.nome}}  Breve: {{al.breve}}</option>        
+                    {% endfor %}
+                </select>
+                <br/><br/>
+                <label>Duração do Voo:</label>
+                <input size="46" type="number" class="text" name="duracao" required/>
+                </div>
+
+                
+                
+
+            
+                </div>
+              </div>
+              <button class="btn btn-lg btn-warning btn-block" type="submit">SALVAR</button>
+            </form>
+            <div class="card-body-icon col-md-1">
+                <i class="fa fa-fw fa-list"></i> 
+            </div>
+          
+        </div>
+        </div>
+      </div>
+      
+{% endblock %}

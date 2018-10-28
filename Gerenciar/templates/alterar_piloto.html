@@ -1,0 +1,80 @@
+{% extends 'buscar_piloto.html' %}
+{% block piloto %}
+
+<div class="col-xl-12 col-sm-6 mb-3">  
+    <div class="card text-white bg-dark o-hidden h-100 ">
+      
+      <div class="card-body ">
+        <form class="form-autenticar"  action="/area_interna/piloto/salvar" method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6">
+            <h2>Dados Pessoais </h2>
+            <br/>
+            <label>Nome Completo:</label>
+            <input size="44" value={{selecao.nome}} type="text" class="text" name="nome_completo" required/>
+            <br/><br/>
+            <label>CPF:</label>
+            <input size="11" value={{selecao.cpf}} type="number" class="text" name="cpf" required/>
+            <label>Breve:</label>
+            <input size="50" value={{selecao.breve}} type="number" class="text" name="breve" required/>
+            <br/><br/>
+            <label>Horas de Voo:</label>
+            <input size="40" value={{selecao.horasdevoo}} type="number" class="text" name="horas_voo" required/>
+            <br/><br/>
+            <label>Nit:</label>
+            <input size="46" value={{selecao.nit}} type="number" class="text" name="nit" required />
+            <label>Salário:</label>
+            <input size="46" value={{selecao.salario}} type="number" class="text" name="salario" required/>
+            <br/><br/>
+            <label>Data Ent:</label>
+            <input size="46" value={{selecao.funcionario.dataentrada}} type="date" class="text" name="data_entrada" required/>
+            <label>Data Sai:</label>
+            <input size="46" value={{selecao.funcionario.datasaida}} type="date" class="text" name="data_saida" required/>
+            <br/><br/>
+
+            <label>Tel Cel:</label>
+            <input size="11" value={{selecao.telefonecel}} type="number" class="text" name="telefone_cel" required/>
+    
+            <label>Tel Res:</label>
+            <input size="11" value={{selecao.telefone}} type="number" class="text" name="telefone_res" required/>
+            <br/><br/>
+            <label>Email:</label>
+            <input size="55" value={{selecao.email}} type="text" class="text" name="email" required/>
+            <br/><br/>
+            </div>
+
+            <div class="col-md-6">
+            <h2>Endereço</h2>
+            <br/>
+            <label>Rua:</label>
+            <input  size="36" value={{selecao.endereco.rua}} name='rua' class="text" type="text" required></input>
+            <br/><br/>
+            <label>Nº:</label>
+            <input size="2" value={{selecao.endereco.numero}} name='numero' class="text" type="text" required></input>
+            <label>Complemento:</label>
+            <input  size="14" value={{selecao.endereco.complemento}} name='complemento' class="text" type="text" required></input>
+            <br/><br/>
+            <label>Bairro:</label>
+            <input size="16" value={{selecao.endereco.bairro}} name='bairro' class="text" type="text"  required></input>
+            <label>CEP:</label>
+            <input size="7" value={{selecao.endereco.cep}} name='cep' class="text" type="text" required ></input>
+            <br/><br/>
+            <label>Cidade:</label>
+            <input size="17" value={{selecao.endereco.cidade}} name='cidade' class="text" type="text" required></input>
+            <label>Estado:</label>
+            <input size="2" value={{selecao.endereco.estado}} name='estado' class="text" type="text" required></input>
+            <br/><br/>  
+        
+            </div>
+          </div>
+          <button class="btn btn-lg btn-warning btn-block" type="submit">SALVAR</button>
+        </form>
+        <div class="card-body-icon col-md-1">
+            <i class="fa fa-fw fa-list"></i> 
+        </div>
+      
+    </div>
+</div>
+
+    {% endblock %}

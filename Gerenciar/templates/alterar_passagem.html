@@ -1,0 +1,51 @@
+{% extends 'buscar_passagem.html' %}
+{% block passagem %}
+<div class="card text-white bg-secondary o-hidden h-100 ">
+          
+    <div class="card-body ">
+      <form class="form-autenticar"  action="/area_interna/passagen/salvar" method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6">
+          <h2>Dados da Passagen </h2>
+          <br/>
+          <label>Selecione o Cliente:</label><br/>
+          <select  name="cliente_selecao" value="OK" style="width: 500px; height: 40px" required >
+              {% for al in cliente %}
+              <option value={{al.id}}>{{ al.nome}}   CPF: {{al.cpf}}</option>        
+              {% endfor %}
+          </select>
+          <br/><br/>
+          <label>Selecione o Voo:</label><br/>
+          <select  name="voo_selecao" value="OK" style="width: 500px; height: 40px" required >
+              {% for al in voo %}
+              <option value={{al.id}}>Local saida: {{ al.saida}}   Local chegada: {{al.chegada}}</option>        
+              {% endfor %}
+          </select>
+          <br/><br/>
+          <label>Numero da Poltrona:</label><br/>
+          <input style="width: 200px; height: 40px" value={{selecao.poltrona}} type="number" class="text" name="poltrona" required/>
+          <br/><br/>
+          <label>Data de saida:</label><br/>
+          <input style="width: 200px; height: 40px" value={{selecao.datap}} type="date" class="text" name="data_p"required />
+          <br/><br/>
+          <label>Horario de saida:</label><br/>
+          <input  style="width: 100px; height: 40px" value={{selecao.horariop}} type="time" class="text" name="hora_p" required/>
+
+          </div>
+
+          
+          
+
+      
+          </div>
+        <button class="btn btn-lg btn-warning btn-block" type="submit">SALVAR</button>
+      </form>
+      <div class="card-body-icon col-md-1">
+          <i class="fa fa-fw fa-list"></i> 
+      </div>
+    
+    </div>
+    </div>
+
+{% endblock %}
