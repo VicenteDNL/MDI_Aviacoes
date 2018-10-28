@@ -1,0 +1,12 @@
+Para permitir a conexão do django com SQL serve é necessario 
+installar:- django-pyodbc-azure
+
+link: https://pypi.org/project/django-pyodbc-azure/
+comando: pip install django-pyodbc-azure
+____________________________________________________________________
+
+- O arquivo "settings.py", em DATABASES (linha 77)
+ deve ser confiurado conforme seu Servidor
+
+Obs: É preciso que o banco de dados já exista, no entando nao a necessidade
+de criar as tabelas do banco de dados, pois o MIGRATE, se encarregas disso 
